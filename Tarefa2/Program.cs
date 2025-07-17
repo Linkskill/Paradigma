@@ -78,7 +78,7 @@
 
             // Imprime o nó raiz da árvore
             Console.WriteLine(indent + " " + node.Value);
-            Console.WriteLine(indent + " │");
+            Console.WriteLine("   ┌─┘└─┐");
 
             // Imprime os ramos esquerdo e direito da árvore
             while (leftBranch != null || rightBranch != null)
@@ -86,7 +86,7 @@
                 if (leftBranch != null)
                 {
                     Console.Write(leftBranch.Value);
-                    Console.Write("──┘");
+                    Console.Write(leftBranch.Left != null ? "──┤" : "──┘");
                     leftBranch = leftBranch.Left;
                 }
                 else
@@ -98,7 +98,7 @@
 
                 if (rightBranch != null)
                 {
-                    Console.Write("└──");
+                    Console.Write(rightBranch.Right != null ? "├──" : "└──");
                     Console.Write(rightBranch.Value);
                     rightBranch = rightBranch.Right;
                 }
